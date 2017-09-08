@@ -51,7 +51,11 @@ class Term(Numeric):
             else:
                 lower = self._left
 
-        import pdb; pdb.set_trace()
+        if isinstance(lower, Term):
+            lower, _ = lower.get_bounds()
+        if isinstance(upper, Term):
+            _, upper = upper.get_bounds()
+
         return lower, upper
 
 
