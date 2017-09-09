@@ -1,6 +1,9 @@
 
 from reasonable.floats import floats
-from reasonable.strategies import FloatStrategy
+from reasonable.gaussian import gaussian
+from reasonable.strategies import (
+  FloatStrategy, GaussianStrategy
+)
 from reasonable.x import x
 
 
@@ -15,6 +18,8 @@ __version__ = '.'.join(map(str, version)) + POINT
 __all__ = [
     floats,
     FloatStrategy,
+    gaussian,
+    GaussianStrategy,
     x,
     __version__
 ]

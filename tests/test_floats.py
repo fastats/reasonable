@@ -3,14 +3,14 @@ from hypothesis import given
 from reasonable import floats, x
 
 
-@given(floats((-5 < x) & (x < 5)))
+@given(floats((-5.1 < x) & (x < 5.2)))
 def test_floats_basic_sanity(n):
-    assert -5 < n < 5
+    assert -5.1 < n < 5.2
 
 
-@given(floats(x < 5))
+@given(floats(x < 5.5))
 def test_floats_less_than(n):
-    assert n < 5
+    assert n < 5.5
 
 
 @given(floats(5 > x))
