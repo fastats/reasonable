@@ -14,10 +14,11 @@ class FloatStrategy(SearchStrategy):
         self._places = places
 
     def __repr__(self):
-        return (f"<{self.__class__.__name__} "
-                "{self._lower_bound} "
-                "{self._upper_bound}"
-                "{self._places}")
+        name = self.__class__.__name__
+        lower = self._lower
+        upper = self._upper
+        places = self._places
+        return (f"<{name} {lower} {upper} {places}>")
 
     def do_draw(self, data):
         num = random.uniform(self._lower, self._upper)
