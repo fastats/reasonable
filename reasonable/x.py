@@ -28,9 +28,6 @@ class Term(Numeric):
         self._op = op
         self._right = right
 
-    def __repr__(self):
-        return f'<Term {self._left} {self._op} {self._right}>'
-
     def get_bounds(self):
         lower, upper = -sys.maxsize, sys.maxsize
 
