@@ -5,6 +5,8 @@ os:
 python:
   - 3.6
   - 3.6-dev
+  - 3.7-dev
+  - nightly
 before_install:
   - pip install numpy
   - pip install scipy
@@ -18,6 +20,6 @@ before_install:
   - pip install sphinx_rtd_theme
 script:
   - pytest
-#  - sphinx-build docs/source docs/build -W
+  - sphinx-build docs docs/_build -W
 after_success:
-    - codecov
+  - codecov
