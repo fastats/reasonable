@@ -20,6 +20,6 @@ before_install:
   - pip install sphinx_rtd_theme
 script:
   - pytest
-  - sphinx-build docs docs/_build -W
+  - sphinx-build docs docs/_build
 after_success:
   - codecov
