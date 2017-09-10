@@ -15,7 +15,7 @@ As a result, `reasonable` does not generate very small (10^-300) floats, which m
 
 For example, by replacing `floats` with the version in `reasonable`, you can perform approximate comparisons:
 
-```
+```python
 from hypothesis import given
 from pytest import approx
 from reasonable import floats, x
@@ -53,3 +53,11 @@ If you would like to contribute anything, open a PR (issues are turned off):
 Doctests should be minimal and serve as API docs for the most common use cases. 
 
 Unit-tests should be exhaustive, and include `basic sanity` tests as well as generative tests using `hypothesis`.
+
+#### How to report a bug
+
+- Create a new python file in the `tests` folder, make sure the filename starts with `test_`.
+- Create a single function in the file which replicates the bug. Make sure the function name starts with `test_`.
+- Open a PR with the new file and a brief description - the unit-tests should fail.
+
+At that point either the reporter or a fastats developer can commit on that PR to fix the bug.
