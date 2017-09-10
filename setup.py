@@ -1,6 +1,7 @@
 
 from distutils.core import setup
 
+
 MAJOR = 2017
 MINOR = 1
 MICRO = ''
