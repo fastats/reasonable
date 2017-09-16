@@ -30,7 +30,7 @@ def test_minimizer(n):
 
 #### Documentation
 
-[http://reasonable.readthedocs.io/en/latest/](http://reasonable.readthedocs.io/en/latest/)
+[reasonable.readthedocs.io](http://reasonable.readthedocs.io/en/latest/)
 
 #### Installation
 
