@@ -19,8 +19,8 @@ def gaussian(mu, sigma, min_value=None, max_value=None, places=8):
 
     .. note::
       `max_value` and `min_value` will cap and floor
-      the data, they won't truncate it. This may 
-      result in data 'bunching' up against the 
+      the data, they won't truncate it. This may
+      result in data 'bunching' up against the
       constraints, and could meaningfully change the
       distribution.
 

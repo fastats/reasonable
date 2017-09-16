@@ -26,7 +26,7 @@ def test_kolmogorov_smirnov_fails():
     data = [strat.do_draw(None) for x in range(10000)]
     arr = np.array(data, dtype='float32')
 
-    t_stat, p_value = kstest(arr, 'norm')
+    _, p_value = kstest(arr, 'norm')
 
     assert p_value == approx(0.0)
 
