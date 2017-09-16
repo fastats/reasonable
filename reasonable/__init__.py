@@ -16,10 +16,10 @@ __version__ = '.'.join(map(str, version)) + POINT
 
 
 __all__ = [
-    floats,
-    FloatStrategy,
-    gaussian,
-    GaussianStrategy,
-    x,
-    __version__
+    'floats',
+    'FloatStrategy',
+    'gaussian',
+    'GaussianStrategy',
+    'x',
+    '__version__'
 ]
