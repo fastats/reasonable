@@ -1,7 +1,7 @@
 hypothesis
 numpy
 scipy
-pytest>=3.5.0
+pytest>=4
 pytest-cov
 codecov
 sphinx
