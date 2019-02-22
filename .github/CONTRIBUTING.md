@@ -9,9 +9,9 @@ If you would like to contribute anything, fork the repo and open a Pull Request 
 The best way to ensure that git history is not jumbled up too much is to add an `upstream` remote:
 
 ```bash
-$ git clone ...your_fastats_fork_url...
-$ cd fastats
-$ git remote add upstream https://github.com/fastats/fastats
+$ git clone ...your_reasonable_fork_url...
+$ cd reasonable
+$ git remote add upstream https://github.com/fastats/reasonable
 ```
 
 Then you can fetch from `upstream` remote and create new features on your fork easily:
@@ -28,16 +28,13 @@ Issues are turned off forever. We prefer Pull Requests for everything.
 
 There's many reasons for this, [this gist][bad_issues] from Ryan Florence details them nicely.
 
-If you have questions about using the library, please feel free to ask
-questions on the [fastats mailing list](https://groups.google.com/forum/#!forum/fastats)
-
 
 ## Reporting bugs and requesting changes
 
 - To report a bug, open a PR with a unittest that fails.
 - To request an API change/new functionality, open a PR with a failing unittest showing your
   preferred API.
-- To submit a fix, open a PR with passing unittests + doctests.
+- To submit a fix, open a PR with passing unittests.
 
 Simples :)
 
@@ -50,36 +47,36 @@ requirements.
 Some of the tests require extra libraries that are not required for normal
 installation.
 
-One way to develop `fastats` code is to work in a virtual environment and
-install `[dev]` requirements bundle:
+One way to develop `reasonable` code is to work in a virtual environment and
+install the requirements from `requirements-dev.txt`:
 
 ```bash
 $ pwd
-/your/github/checkout/of/fastats
+/your/github/checkout/of/reasonable
 $ python3 -m pip install virtualenv --user
 $ python3 -m virtualenv venv
 $ . venv/bin/activate
-$ pip install -e .[dev]
+$ pip install -r requirements-dev.txt
 ```
 
 Such install will ensure that all requirements are met, and that the changes
-to `fastats` code are immediately visible.
+to `reasonable` code are immediately visible.
 
 #### IDEs
 
 Advanced IDEs, such as PyCharm, will allow you to create the virtualenv
 using GUI and pointing the project interpreter at it.  All you have to do then
 is fire up the terminal in the IDE, ensure you're in venv and run
-`pip install -e .[dev]`.  This should enable things like
+`pip install -r requirements-dev.txt`.  This should enable things like
 `right-click -> run py.test` etc.
 
 
-#### windows
+#### Windows
 
-If you're on windows, the procedure should be analogous - except
+If you're on Windows, the procedure should be analogous - except
 `activate` is a script that can be called directly.
 
-One problem that we've seen on windows is that `statsmodels` won't install
+One problem that we've seen on Windows is that `statsmodels` won't install
 unless `numpy` is installed first.  The solution is to run `pip install numpy`
 before `pip install -e .[dev]`.
 

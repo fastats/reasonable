@@ -6,16 +6,7 @@ python:
   - 3.6
   - 3.6-dev
 before_install:
-  - pip install numpy
-  - pip install scipy
-  - pip install scikit-learn
-  - pip install numba
-  - pip install hypothesis
-  - pip install pytest 
-  - pip install pytest-cov
-  - pip install codecov
-  - pip install sphinx
-  - pip install sphinx_rtd_theme
+  - pip install -r requirements-dev.txt
 script:
   - pytest
   - sphinx-build docs docs/_build
