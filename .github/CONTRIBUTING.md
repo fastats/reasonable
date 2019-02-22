@@ -78,7 +78,7 @@ If you're on Windows, the procedure should be analogous - except
 
 One problem that we've seen on Windows is that `statsmodels` won't install
 unless `numpy` is installed first.  The solution is to run `pip install numpy`
-before `pip install -e .[dev]`.
+before `pip install -r requirements-dev.txt`.
 
 
 ## Code style
