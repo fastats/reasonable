@@ -1,4 +1,8 @@
 hypothesis
-pytest
 numpy
 scipy
+pytest
+pytest-cov
+codecov
+sphinx
+sphinx_rtd_theme
