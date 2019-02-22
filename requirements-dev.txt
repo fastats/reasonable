@@ -1,0 +1,9 @@
+hypothesis
+numpy
+scipy
+pytest>=4
+pytest-cov
+codecov
+sphinx
+sphinx_rtd_theme
+attrs>=17.4.0

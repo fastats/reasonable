@@ -1,0 +1,122 @@
+# Contribution guide
+
+All contributions are welcome! :)
+
+If you would like to contribute anything, fork the repo and open a Pull Request (PR).
+
+## Recommended git workflow
+
+The best way to ensure that git history is not jumbled up too much is to add an `upstream` remote:
+
+```bash
+$ git clone ...your_reasonable_fork_url...
+$ cd reasonable
+$ git remote add upstream https://github.com/fastats/reasonable
+```
+
+Then you can fetch from `upstream` remote and create new features on your fork easily:
+
+```bash
+$ git fetch upstream
+$ git checkout -b my_awesome_branch upstream/master
+```
+
+
+## Issues
+
+Issues are turned off forever. We prefer Pull Requests for everything.
+
+There's many reasons for this, [this gist][bad_issues] from Ryan Florence details them nicely.
+
+
+## Reporting bugs and requesting changes
+
+- To report a bug, open a PR with a unittest that fails.
+- To request an API change/new functionality, open a PR with a failing unittest showing your
+  preferred API.
+- To submit a fix, open a PR with passing unittests.
+
+Simples :)
+
+
+## Installing requirements for development
+
+To ease dependency management, we rely on `setup.py` script to contain the
+requirements.
+
+Some of the tests require extra libraries that are not required for normal
+installation.
+
+One way to develop `reasonable` code is to work in a virtual environment and
+install the requirements from `requirements-dev.txt`:
+
+```bash
+$ pwd
+/your/github/checkout/of/reasonable
+$ python3 -m pip install virtualenv --user
+$ python3 -m virtualenv venv
+$ . venv/bin/activate
+$ pip install -r requirements-dev.txt
+```
+
+Such install will ensure that all requirements are met, and that the changes
+to `reasonable` code are immediately visible.
+
+#### IDEs
+
+Advanced IDEs, such as PyCharm, will allow you to create the virtualenv
+using GUI and pointing the project interpreter at it.  All you have to do then
+is fire up the terminal in the IDE, ensure you're in venv and run
+`pip install -r requirements-dev.txt`.  This should enable things like
+`right-click -> run py.test` etc.
+
+
+#### Windows
+
+If you're on Windows, the procedure should be analogous - except
+`activate` is a script that can be called directly.
+
+One problem that we've seen on Windows is that `statsmodels` won't install
+unless `numpy` is installed first.  The solution is to run `pip install numpy`
+before `pip install -r requirements-dev.txt`.
+
+
+## Code style
+
+We tend to follow [PEP8][pep8] for Python code style, with a few exceptions:
+
+- All `.py` files should begin with a blank line (blame @dwillmer for this).
+- One-letter and upper-case variable names might be acceptable where they make sense, especially in
+  linear algebra functions dealing with matrices.
+
+### Before submitting your code for PR:
+
+- Make sure all your `.py` files always end with a blank line (this is good practice,
+  also for other file formats).
+- Make sure your source files are `UTF-8` encoded.
+- Make sure you have tests (test coverage is automatically enforced on every PR).
+
+#### Tests
+
+- Doctests should be minimal, and serve as API docs for the most common use cases.
+
+  - For doctests, you should place this at the bottom of your module (followed by a blank line, ofc):
+
+    ```python
+    if __name__ == '__main__':
+        import pytest
+        pytest.main([__file__])
+    ```
+      
+    This ensures that you can "run" every doctest in the module ad-hoc.
+  
+  - Note that some doctests require special setup / options that are provided by pytest.
+    Because of this, they won't work on their own.
+    
+    See the `conftest.py` and `pytest.ini` files for more details.
+
+- Unittests should be exhaustive and should reside in the `tests` directory.
+
+
+[bad_issues]: https://gist.github.com/ryanflorence/8a62abea562ca2896dee
+[pep8]: https://pep8.org/
