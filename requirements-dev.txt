@@ -1,8 +1,8 @@
 hypothesis
 numpy
 scipy
+pytest>=4
 pytest-cov
 codecov
-pytest
 sphinx
 sphinx_rtd_theme
